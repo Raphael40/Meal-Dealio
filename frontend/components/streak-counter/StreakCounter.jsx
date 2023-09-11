@@ -1,34 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
 import { Text,View } from "react-native"
 
-import StreakTracker from "../../classes/StreakTracker"
-import Total from "../../classes/Total";
 import styles from "./streakCounter.style"
 
-const StreakCounter= (props) => {
-	const [streakTracker] = useState(new StreakTracker());
-	const [total, setTotal] = useState(new Total());
-
-	const handleMealDealConsumed = () => {
-		total.incrementTotal();
-		streakTracker.incrementStreak();
-	};
+const StreakCounter= ({ total, currentStreak, longestStreak }) => {
 
 	return (
 		<View style={styles.statContainer}>
 			<View style={styles.container}>
-				<Text style={styles.text}>Total Meal Deals Consumed: {total.getTotal()}</Text>
+				<Text style={styles.text}>Total Meal Deals Consumed: {total}</Text>
 			</View>
 			<View style={styles.container}>
-				<Text style={styles.text}>Current Streak: {streakTracker.getCurrentStreak()}</Text>
+				<Text style={styles.text}>Current Streak: {currentStreak}</Text>
 			</View>
 			<View style={styles.container}>
-				<Text style={styles.text}>Longest Streak: {streakTracker.getLongestStreak()}</Text>
+				<Text style={styles.text}>Longest Streak: {longestStreak}</Text>
 			</View>
 		</View>
 	)
 }
-export const setTotalExternal = () => {
-	handleMealDealConsumed()
-}
+
 export default StreakCounter;

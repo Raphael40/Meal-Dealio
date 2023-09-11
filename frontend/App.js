@@ -1,13 +1,10 @@
 import { View } from 'react-native';
-
-import StreakCounter from './components/streak-counter/StreakCounter';
-import Input from './components/input/Input';
+import Feed from "./components/feed/Feed"
 
 export default function App() {
   return (
     <View>
-      <StreakCounter />
-      <Input/>
+      <Feed />
     </View>
   );
 }
