@@ -7,11 +7,11 @@ import styles from "./streakCounter.style"
 
 const StreakCounter= (props) => {
 	const [streakTracker] = useState(new StreakTracker());
-	const [total] = useState(new Total());
+	const [total, setTotal] = useState(new Total());
 
 	const handleMealDealConsumed = () => {
-		this.total.incrementTotal();
-		this.StreakTracker.incrementStreak();
+		total.incrementTotal();
+		streakTracker.incrementStreak();
 	};
 
 	return (
@@ -28,5 +28,7 @@ const StreakCounter= (props) => {
 		</View>
 	)
 }
-
-export default StreakCounter
+export const setTotalExternal = () => {
+	handleMealDealConsumed()
+}
+export default StreakCounter;
