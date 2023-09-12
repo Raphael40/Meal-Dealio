@@ -5,23 +5,29 @@ import StreakTracker from "../../classes/StreakTracker";
 import Total from "../../classes/Total";
 
 const totalCounter = new Total();
+const streakTracker = new StreakTracker()
 
 function Feed() {
-	const [streakTracker] = useState(new StreakTracker());
-
   const [total, setTotal] = useState(totalCounter.getTotal());
+	const [currentStreak, setCurrentStreak] = useState(streakTracker.getCurrentStreak());
+  const [longestStreak, setLongestStreak] = useState(streakTracker.getLongestStreak());
 
   const handleMealDealConsumed = () => {
     totalCounter.incrementTotal();
-    setTotal(instantiatedClass.getTotal())
+    streakTracker.incrementStreak();
+
+    console.log(streakTracker.getCurrentStreak())
+    setTotal(totalCounter.getTotal())
+    setCurrentStreak(streakTracker.getCurrentStreak())
+    setLongestStreak(streakTracker.getLongestStreak())
   };
 
   return (
     <>
       <StreakCounter
         total={total}
-        currentStreak={streakTracker.getCurrentStreak()}
-        longestStreak={streakTracker.getLongestStreak()}
+        currentStreak={currentStreak}
+        longestStreak={longestStreak}
       />
       <Input handleMealDealConsumed={handleMealDealConsumed} />
     </>
