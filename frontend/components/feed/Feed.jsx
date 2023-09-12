@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import StreakCounter from '../streak-counter/StreakCounter';
+import StreakDisplay from '../streak-display/StreakDisplay';
 import Input from '../input/Input';
 import StreakTracker from "../../classes/StreakTracker";
 import Total from "../../classes/Total";
@@ -16,7 +16,6 @@ function Feed() {
     totalCounter.incrementTotal();
     streakTracker.incrementStreak();
 
-    console.log(streakTracker.getCurrentStreak())
     setTotal(totalCounter.getTotal())
     setCurrentStreak(streakTracker.getCurrentStreak())
     setLongestStreak(streakTracker.getLongestStreak())
@@ -24,7 +23,7 @@ function Feed() {
 
   return (
     <>
-      <StreakCounter
+      <StreakDisplay
         total={total}
         currentStreak={currentStreak}
         longestStreak={longestStreak}

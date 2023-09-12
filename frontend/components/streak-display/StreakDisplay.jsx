@@ -1,9 +1,9 @@
 import React from "react";
 import { Text,View } from "react-native"
 
-import styles from "./streakCounter.style"
+import styles from "./streakDisplay.style"
 
-const StreakCounter= ({ total, currentStreak, longestStreak }) => {
+const StreakDisplay= ({ total, currentStreak, longestStreak }) => {
 
 	return (
 		<View style={styles.statContainer}>
@@ -20,4 +20,4 @@ const StreakCounter= ({ total, currentStreak, longestStreak }) => {
 	)
 }
 
-export default StreakCounter;
+export default StreakDisplay;

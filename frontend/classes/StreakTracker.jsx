@@ -5,7 +5,6 @@ class StreakTracker {
 	}
 
 	incrementStreak() {
-		console.log("I am being pressed")
 		this.currentStreak++;
 		if (this.currentStreak > this.longestStreak) {
 			this.longestStreak = this.currentStreak;
