@@ -4,6 +4,7 @@ import StreakDisplay from '../streak-display/StreakDisplay';
 import Input from '../input/Input';
 import StreakTracker from "../../classes/StreakTracker";
 import Total from "../../classes/Total";
+import putRequest from '../../firebase/fetch';
 
 import { db } from '../../firebase/config'
 import { collection, getDocs } from 'firebase/firestore'
@@ -47,13 +48,15 @@ function Feed() {
     fetchData();
   }, []);
 
-  const handleMealDealConsumed = () => {
+  const handleMealDealConsumed = async () => {
     totalCounter.incrementTotal();
     setTotal(totalCounter.getTotal())
     
     streakTracker.incrementCurrentStreak();
     setCurrentStreak(streakTracker.getCurrentStreak())
     setLongestStreak(streakTracker.getLongestStreak())
+
+    await putRequest(totalCounter.getTotal(), streakTracker.getCurrentStreak(), streakTracker.getLongestStreak())
   };
 
   return (
