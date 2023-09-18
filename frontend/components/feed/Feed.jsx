@@ -12,9 +12,9 @@ const totalCounter = new Total();
 const streakTracker = new StreakTracker()
 
 function Feed() {
-  const [total, setTotal] = useState(totalCounter.getTotal());
-	const [currentStreak, setCurrentStreak] = useState(streakTracker.getCurrentStreak());
-  const [longestStreak, setLongestStreak] = useState(streakTracker.getLongestStreak());
+  const [total, setTotal] = useState(null);
+	const [currentStreak, setCurrentStreak] = useState(0);
+  const [longestStreak, setLongestStreak] = useState(null);
 
   useEffect(() => {
     async function fetchData() {
@@ -25,8 +25,20 @@ function Feed() {
         let results = [];
         snapshot.docs.forEach(doc => {
           results.push({id: doc.id, ...doc.data()});
-        });
-        console.log(results);
+        }); 
+
+        for (let i = results[0].total; i > 0; i--) {
+          totalCounter.incrementTotal()
+          setTotal(totalCounter.getTotal())
+        }
+        for (let i = results[0].currentStreak; i > 0; i--) {
+          streakTracker.incrementStreak()
+          setCurrentStreak(streakTracker.getCurrentStreak())
+        }
+        for (let i = results[0].longestStreak; i > 0; i--) {
+          streakTracker.incrementStreak()
+          setLongestStreak(streakTracker.getLongestStreak())
+        }
       } catch (error) {
         console.error('Error fetching documents: ', error);
       }
