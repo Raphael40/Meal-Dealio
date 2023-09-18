@@ -12,9 +12,9 @@ const totalCounter = new Total();
 const streakTracker = new StreakTracker()
 
 function Feed() {
-  const [total, setTotal] = useState(null);
+  const [total, setTotal] = useState(0);
 	const [currentStreak, setCurrentStreak] = useState(0);
-  const [longestStreak, setLongestStreak] = useState(null);
+  const [longestStreak, setLongestStreak] = useState(0);
 
   useEffect(() => {
     async function fetchData() {
@@ -32,11 +32,11 @@ function Feed() {
           setTotal(totalCounter.getTotal())
         }
         for (let i = results[0].currentStreak; i > 0; i--) {
-          streakTracker.incrementStreak()
+          streakTracker.incrementCurrentStreak()
           setCurrentStreak(streakTracker.getCurrentStreak())
         }
         for (let i = results[0].longestStreak; i > 0; i--) {
-          streakTracker.incrementStreak()
+          streakTracker.incrementLongestStreak()
           setLongestStreak(streakTracker.getLongestStreak())
         }
       } catch (error) {
@@ -49,9 +49,9 @@ function Feed() {
 
   const handleMealDealConsumed = () => {
     totalCounter.incrementTotal();
-    streakTracker.incrementStreak();
-
     setTotal(totalCounter.getTotal())
+    
+    streakTracker.incrementCurrentStreak();
     setCurrentStreak(streakTracker.getCurrentStreak())
     setLongestStreak(streakTracker.getLongestStreak())
   };
