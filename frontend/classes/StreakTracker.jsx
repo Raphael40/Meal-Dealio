@@ -4,11 +4,15 @@ class StreakTracker {
 		this.longestStreak = 0;
 	}
 
-	incrementStreak() {
+	incrementCurrentStreak() {
 		this.currentStreak++;
 		if (this.currentStreak > this.longestStreak) {
 			this.longestStreak = this.currentStreak;
 		}
+	}
+
+	incrementLongestStreak() {
+		this.longestStreak++
 	}
 
 	resetCurrentStreak() {
