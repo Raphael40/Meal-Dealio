@@ -1,5 +1,7 @@
 import StreakTracker from "../../classes/StreakTracker";
 
+// npx jest - to run tests
+
 describe("StreakTracker Class", () => {
   it("should return a new instance of StreakTracker", () => {
       const streakTracker = new StreakTracker();

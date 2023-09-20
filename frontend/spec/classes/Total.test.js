@@ -1,5 +1,7 @@
 import Total from "../../classes/Total";
 
+// npx jest - to run tests
+
 describe("Total Class", () => {
   it("should create a new class object with a value of 0", () => {
     const total = new Total();
