@@ -13,3 +13,4 @@ describe("Total Class", () => {
     expect(total.getTotal()).toEqual(1);
   })
 })
+
