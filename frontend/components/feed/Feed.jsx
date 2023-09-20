@@ -32,13 +32,13 @@ function Feed() {
           totalCounter.incrementTotal()
           setTotal(totalCounter.getTotal())
         }
-        for (let i = results[0].currentStreak; i > 0; i--) {
-          streakTracker.incrementCurrentStreak()
-          setCurrentStreak(streakTracker.getCurrentStreak())
-        }
         for (let i = results[0].longestStreak; i > 0; i--) {
           streakTracker.incrementLongestStreak()
           setLongestStreak(streakTracker.getLongestStreak())
+        }
+        for (let i = results[0].currentStreak; i > 0; i--) {
+          streakTracker.incrementCurrentStreak()
+          setCurrentStreak(streakTracker.getCurrentStreak())
         }
       } catch (error) {
         console.error('Error fetching documents: ', error);
