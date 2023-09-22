@@ -12,7 +12,7 @@
   "jest": {
     "preset": "jest-expo",
     "transformIgnorePatterns": [
-      "node_modules/(?!((jest-)?react-native|@react-native(-community)?)|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|react-native-svg|./firebase/config.js|dist/src/firebase)"
+      "node_modules/(?!((jest-)?react-native|@react-native(-community)?)|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|react-native-svg|./firebase/config.js|firebase/app|firebase/firestore|@testing-library/react-native)"
     ],
     "moduleNameMapper": {
       "^firebase/app$": "<rootDir>/node_modules/firebase/app/dist/index.cjs.js"
@@ -21,6 +21,7 @@
   "dependencies": {
     "@expo/ngrok": "^4.1.1",
     "@jest/expect": "^29.7.0",
+    "@testing-library/react-native": "^12.3.0",
     "expo": "~49.0.8",
     "expo-status-bar": "~1.6.0",
     "firebase": "^10.3.1",
