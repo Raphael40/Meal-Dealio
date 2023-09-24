@@ -12,7 +12,7 @@
   "jest": {
     "preset": "jest-expo",
     "transformIgnorePatterns": [
-      "node_modules/(?!((jest-)?react-native|@react-native(-community)?)|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|react-native-svg)"
+      "node_modules/(?!((jest-)?react-native|@react-native(-community)?)|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|react-native-svg|./firebase/config.js|@testing-library/react-native|@react-native-firebase/app|@react-native-firebase/firestore|firebase|@firebase/app|@firebase/firestore|@firebase/auth|@firebase/storage|@firebase/database|@firebase/functions|@firebase/messaging|@firebase/remote-config|@firebase/analytics|@firebase/performance|@firebase/installations|@firebase/remote-config|@firebase/remote-config-types|@firebase/util|@firebase/logger|@firebase/component|@firebase/installations-types|@firebase/app-types|@firebase/analytics-types|@firebase/performance-types|@firebase/messaging-types|@firebase/storage-types|@firebase/database-types|@firebase/functions-types|@firebase/firestore-types|@firebase/auth-types|@firebase/rules-unit-testing|@firebase/rules-unit-testing-types|@firebase/testing|@firebase/rules-unit-testing-types|@firebase/rules-unit-testing|@firebase/rules-unit-testing-types|@firebase/rules-unit-testing|@firebase/webchannel-wrapper|@firebase/polyfill)"
     ]
   },
   "dependencies": {
