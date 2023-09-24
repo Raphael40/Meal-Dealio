@@ -3,7 +3,7 @@ import Feed from "./components/feed/Feed"
 
 // expo start --tunnel - to start app
 
-export default function App() {
+const App = () => {
   return (
     <View>
       <Feed />
@@ -11,3 +11,4 @@ export default function App() {
   );
 }
 
+export default App;

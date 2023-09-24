@@ -18,7 +18,7 @@ function Feed() {
   const [longestStreak, setLongestStreak] = useState(0);
 
   useEffect(() => {
-    async function fetchData() {
+    const fetchData = async () => {
       const ref = collection(db, 'Meals');
   
       try {
