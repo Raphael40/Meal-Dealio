@@ -9,6 +9,14 @@ jest.mock('firebase/firestore', () => ({
 }));
 
 describe('putRequest', () => {
+  const originalConsoleError = console.error;
+  beforeAll(() => {
+    console.error = jest.fn();
+  });
+  afterAll(() => {
+    console.error = originalConsoleError;
+  });
+  
   it('should update the document in Firestore', async () => {
     const mockedDocRef = doc(db, 'Meals', '8rhTTawNno5YJWVbHkfI')
     doc.mockReturnValue(mockedDocRef);
