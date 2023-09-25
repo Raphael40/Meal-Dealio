@@ -5,10 +5,12 @@ import { collection, getDocs } from 'firebase/firestore'; // Import Firebase fun
 
 import Feed from '../../components/feed/Feed';
 
+// Mock the Firebase functions
 jest.mock('firebase/firestore');
 
 describe('Feed component', () => {
 
+  // Mock the console.error function
   const originalConsoleError = console.error;
   beforeAll(() => {
     console.error = jest.fn();
@@ -18,11 +20,12 @@ describe('Feed component', () => {
   });
 
   it('should render StreakDisplay and Input component', async () => {
-    
+    // render the component
     const { getByTestId } = render(
       <Feed />
     );
 
+    // Check if the components are rendered
     expect(getByTestId('feedId')).toBeTruthy();
     expect(getByTestId('streakDisplayId')).toBeTruthy();
     expect(getByTestId('inputId')).toBeTruthy();
@@ -49,8 +52,10 @@ describe('Feed component', () => {
       ],
     });
 
+    // Render the component
     const { getByText, getByTestId } = render(<Feed />);
 
+    // Check if the component renders the correct text elements
     await waitFor(() => {
       const totalTextElement = getByText(`Total Meal Deals Consumed: ${mockedData[0].total}`);
       const currentStreakTextElement = getByText(`Current Streak: ${mockedData[0].currentStreak}`);

@@ -1,6 +1,7 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 import { View, Button} from 'react-native'
 
+// This component is a button that calls the handleMealDealConsumed function in the Feed component
 const Input = ({ handleMealDealConsumed }) => {
  
   const HandlePress=()=>{

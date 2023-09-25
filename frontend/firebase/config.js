@@ -1,6 +1,7 @@
 import { initializeApp } from 'firebase/app'
 import { getFirestore } from 'firebase/firestore'
 
+// App's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyAAp-2NvoBkZpQRoHKjxRSn2YQJo43SN20",
   authDomain: "meal-dealio.firebaseapp.com",

@@ -3,6 +3,7 @@ import { Text,View } from "react-native"
 
 import styles from "./streakDisplay.style"
 
+// This component displays the total, current streak, and longest streak on the Feed
 const StreakDisplay= ({ total, currentStreak, longestStreak }) => {
 
 	return (
