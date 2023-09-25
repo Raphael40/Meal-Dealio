@@ -8,7 +8,7 @@ const Input = ({ handleMealDealConsumed }) => {
   }
 
   return (
-    <View>
+    <View testID='inputId'>
       <Button title='Add Meal Dealio' onPress={HandlePress}/>
     </View>
   )

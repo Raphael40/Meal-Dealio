@@ -6,7 +6,7 @@ import styles from "./streakDisplay.style"
 const StreakDisplay= ({ total, currentStreak, longestStreak }) => {
 
 	return (
-		<View style={styles.statContainer}>
+		<View testID="streakDisplayId" style={styles.statContainer}>
 			<View style={styles.container}>
 				<Text style={styles.text}>Total Meal Deals Consumed: {total}</Text>
 			</View>

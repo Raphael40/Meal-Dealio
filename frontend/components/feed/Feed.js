@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { View } from 'react-native';
 
 import StreakDisplay from '../streak-display/StreakDisplay';
 import Input from '../input/Input';
@@ -61,12 +62,14 @@ function Feed() {
 
   return (
     <>
-      <StreakDisplay
-        total={total}
-        currentStreak={currentStreak}
-        longestStreak={longestStreak}
-      />
-      <Input handleMealDealConsumed={handleMealDealConsumed} />
+      <View testID="feedId">
+        <StreakDisplay
+          total={total}
+          currentStreak={currentStreak}
+          longestStreak={longestStreak}
+        />
+        <Input handleMealDealConsumed={handleMealDealConsumed} />
+      </View>
     </>
   )
 }
