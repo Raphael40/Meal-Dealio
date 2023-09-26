@@ -8,4 +8,4 @@ My friend and I came up with the idea when I noticed he had eaten a meal every d
 ### The method
 An Expo React-Native app that uses both UseState() and Classes. 
 The data is backed up to Firestore database (This is my first time using it)
-With great difficulty we have tested the app using Jest
+Tested the app using Jest
