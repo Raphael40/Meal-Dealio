@@ -5,6 +5,7 @@ import { collection, getDocs } from 'firebase/firestore'
 
 import StreakDisplay from '../streak-display/StreakDisplay';
 import Input from '../input/Input';
+import Achievements from '../achievements/Achievements';
 import StreakTracker from "../../classes/StreakTracker";
 import Total from "../../classes/Total";
 import putRequest from '../../firebase/fetch';
@@ -69,12 +70,19 @@ function Feed() {
   return (
     <>
       <View testID="feedId">
-        <StreakDisplay
-          total={total}
-          currentStreak={currentStreak}
-          longestStreak={longestStreak}
-        />
-        <Input handleMealDealConsumed={handleMealDealConsumed} />
+        <View>
+          <StreakDisplay
+            total={total}
+            currentStreak={currentStreak}
+            longestStreak={longestStreak}
+          />
+        </View>
+        <View>
+          <Input handleMealDealConsumed={handleMealDealConsumed} />
+        </View>
+        <View>
+          <Achievements />
+        </View>
       </View>
     </>
   )
