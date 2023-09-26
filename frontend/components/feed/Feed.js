@@ -69,7 +69,7 @@ function Feed() {
 
   return (
     <>
-      <View testID="feedId">
+      <View  testID="feedId">
         <View>
           <StreakDisplay
             total={total}
