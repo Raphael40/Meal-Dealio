@@ -9,3 +9,19 @@ My friend and I came up with the idea when I noticed he had eaten a meal every d
 An Expo React-Native app that uses both UseState() and Classes. 
 The data is backed up to Firestore database (This is my first time using it)
 Tested the app using Jest
+
+### Usage
+To run app 
+``` 
+expo start --tunnel
+```
+To run app in web
+```
+npx expo start --web
+```
+To run tests
+```
+npx jest
+or 
+npm run test
+```

@@ -1,7 +1,8 @@
 import { View } from 'react-native';
 import Feed from "./components/feed/Feed"
 
-// expo start --tunnel - to start app
+// expo start --tunnel : 'to start app'
+// npx expo start --web : 'to start web app'
 
 const App = () => {
   return (
